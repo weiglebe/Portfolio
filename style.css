@@ -245,3 +245,136 @@ footer a {
     color: white;
 }
 
+/*
+AI PROMPT:
+Update only my CSS file for the portfolio site. Do not change the HTML.
+Keep the existing visual style and colors. Add a mobile-first responsive
+layout that uses Flexbox appropriately for the one-dimensional navigation,
+CSS Grid appropriately for the two-dimensional Projects section, and
+min-width media queries for progressively larger screens. Include at least
+three breakpoints. On larger screens, improve the About section layout
+without requiring any HTML changes. Keep the design readable, accessible,
+and consistent with the existing portfolio.
+*/
+
+/* Mobile-first navigation: one-dimensional layout with Flexbox */
+nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+nav li {
+    display: block;
+    margin: 0;
+}
+
+/* Mobile-first projects: one-column Grid */
+#projects {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--standard-gap);
+}
+
+#projects h2 {
+    grid-column: 1 / -1;
+}
+
+#projects article {
+    margin: 0;
+}
+
+/* Breakpoint 1: small tablets and large phones */
+@media (min-width: 600px) {
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 24px;
+    }
+
+    main {
+        padding: 28px;
+    }
+
+    #projects {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Breakpoint 2: tablets and laptops */
+@media (min-width: 900px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    header p {
+        margin: 0;
+    }
+
+    nav ul {
+        justify-content: flex-end;
+    }
+
+    main {
+        max-width: 1100px;
+    }
+
+    #about {
+        display: grid;
+        grid-template-columns: 320px 1fr;
+        column-gap: 36px;
+        align-items: start;
+    }
+
+    #about h2 {
+        grid-column: 1 / -1;
+    }
+
+    #about figure {
+        grid-column: 1;
+        grid-row: 2 / span 3;
+        margin: 0;
+    }
+
+    #about > p,
+    #about > h3,
+    #about > ul {
+        grid-column: 2;
+    }
+
+    #projects {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Breakpoint 3: large desktop screens */
+@media (min-width: 1200px) {
+    main {
+        max-width: 1180px;
+        padding: 36px;
+    }
+
+    section {
+        padding: 36px;
+    }
+
+    #hero {
+        padding-top: 72px;
+        padding-bottom: 72px;
+    }
+
+    #projects {
+        gap: 28px;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+}
