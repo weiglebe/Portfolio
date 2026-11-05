@@ -16,7 +16,7 @@ I ran my published portfolio website through Google PageSpeed Insights. The acce
 | Best Practices | 100 |
 | SEO | 100 |
 
-![PageSpeed Insights audit results showing a 100 accessibility score](images/pagespeed-audit.png)
+<img width="869" height="680" alt="portfolio audit" src="https://github.com/user-attachments/assets/8e05f9f3-24d1-4532-a88c-03e7bd8f7b8c" />
 
 ## Review of existing accessibility features
 
